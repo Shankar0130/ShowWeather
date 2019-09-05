@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:id="@+id/city_back"
-            android:src="@drawable/mychandigarh"
+            android:background="#000"
             android:scaleType="centerCrop"/>
 
         <TextView
@@ -58,4 +58,4 @@
 
     </RelativeLayout>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

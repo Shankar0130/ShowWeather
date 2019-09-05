@@ -1,65 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#ffffff"
-    android:layout_margin="20dp">
+    tools:context=".MainActivity">
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="@android:color/black" />-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
 
-    
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/weathertextview"
-        android:text="Weather"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:textSize="40sp"
-        android:textColor="#111D2E"/>
-
-    <Button
+    <com.paulrybitskyi.persistentsearchview.PersistentSearchView
+        android:id="@+id/persistentSearchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Today"
-        android:id="@+id/todaybutton"
-        android:textColor="#111D2E"
-        android:textStyle="bold"
-        android:layout_below="@+id/weathertextview"
-        android:background="@drawable/button_round"
-        android:elevation="10dp"
-        android:layout_margin="8dp"/>
+        android:paddingTop="4dp"
+        android:paddingLeft="4dp"
+        android:paddingStart="4dp"
+        android:paddingRight="4dp"
+        android:paddingEnd="4dp"/>
 
-
-
-    <android.support.v4.widget.SwipeRefreshLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/swipe_container"
-        android:layout_below="@+id/todaybutton"
-        android:layout_margin="10dp">
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:padding="20dp">
 
 
-        <android.support.v7.widget.RecyclerView
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weathertextview"
+            android:text="Weather"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            android:textSize="40sp"
+            android:textColor="#111D2E"/>
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/recycler_for_city">
-
-
-        </android.support.v7.widget.RecyclerView>
-
-
-
-    </android.support.v4.widget.SwipeRefreshLayout>
-
-
-
+            android:text="Today"
+            android:id="@+id/todaybutton"
+            android:textColor="#111D2E"
+            android:textStyle="bold"
+            android:layout_below="@+id/weathertextview"
+            android:background="@drawable/button_round"
+            android:elevation="10dp"
+            android:layout_margin="8dp"/>
 
 
 
-</RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycler_for_city"
+            android:layout_below="@+id/todaybutton">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_records"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
